@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Olympic/Paralympic Games Countdown</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+        margin: 0;
+        padding: 0px;
+        justify-content: center; 
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.7);
+      
+        }
+
+        .rainbow-container {
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+
+        .rainbow {
+            z-index: -10;
+            width: 250%;
+            height: 250%;
+            display: none;
+            position: absolute;
+            top: -75%;
+            left: -75%;
+            background-image: conic-gradient(#0081C8, #0081C8, #FCB131, #FCB131, #EE334E, #EE334E, #00A651, #00A651);
+            animation: spin 3.5s infinite linear;
+            
+        }
+
+        @keyframes spin {100%{transform: rotate(-360deg);} }  
+
+        .container {
+            width: 99vw;
+            height: 98vh;
+
+        }
+
+        .background-image {
+            display: flex;
+            width: 99vw;
+            height: 98vh;
+            position: absolute;
+            opacity: 0.99;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .background-image-athletes {
+            overflow: hidden;
+            display: flex;
+            z-index: -10;
+            width: 100%;
+            height: 90vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .countdown-container,
+        .countdown-container2 {
+            position: absolute;
+            text-align: center;
+            margin: 0 auto;
+            top: 10%;
+            width: 40%;
+            border-radius: 20px;
+            padding: 25px 10px;
+            /* background-color: rgba(240, 221, 181, 0.644); */
+    
+        }
+
+        .countdown-container {
+            left: 23%;
+            transform: translate(-50%, -30%);
+          
+        }
+
+        .countdown-container2 {
+            left: 76%;
+            transform: translate(-50%, -30%);
+       
+        }
+        
+        h1 {
+            font-size: 2rem;
+            z-index: 1;
+            color: #000000e0;
+        }
+
+        #countdown-timer {
+            font-size: 7rem;
+            font-weight: 600;
+            color: #000000e0;
+            transition: font-size 2.5s ease-in-out;
+        }
+    </style>
+    
+    
+
+</head>
+<body>
+    <div class="rainbow-container">
+        <div class="rainbow" id="rainbow-border"></div>
+    </div>
+    <div class="container">
+        <!-- <img src="https://pbs.twimg.com/media/E9gqnaWXsAIHm7K?format=jpg&name=large" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
+        <img src="./img/background2.png" class="background-image" alt="Paris 2024 Olympic Image Logo">
+    
+    <div class="countdown-container">
+        <h1>Countdown till the Olympic Games </h1>
+        
+        <div id="countdown-timer">
+            <span id="days">00</span>
+            <span>:</span>
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+        </div>
+    </div>
+
+    <div class="countdown-container2">
+        <h1>Countdown till the Paralympic Games </h1>
+        
+        <div id="countdown-timer">
+            <span id="countdown-2-days">00</span>
+            <span>:</span>
+            <span id="countdown-2-hours">00</span>
+            <span>:</span>
+            <span id="countdown-2-minutes">00</span>
+            <span>:</span>
+            <span id="countdown-2-seconds">00</span>
+        </div>
+    </div>
+    </div>
+            
+    </div>
+        
+        
+    <!-- <script src="script.js"></script> -->
+
+    <script >
+        (()=>{
+
+            const border = document.getElementById("rainbow-border")
+            setTimeout(() => {
+                border.style.display = "block"
+                
+            }, 800);
+            // Function to update the countdown timer
+            function updateCountdown() {
+            const now = new Date();
+            const eventDay = new Date(now.getFullYear(), 7, 2);
+            if (now > eventDay) {
+                eventDay.setFullYear(now.getFullYear() + 1);
+            }
+
+            const timeRemaining = eventDay - now;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60) / 1000));
+
+            document.getElementById("days").textContent = String(days).padStart(2, '0');
+            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+            const countdownTimer = document.getElementById("countdown-timer");
+
+
+        }
+
+        // Initial call to set up the timer
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+
+        // Function to update the countdown timer
+        function updateCountdown2() {
+            const now = new Date();
+            const eventDay = new Date(now.getFullYear(), 7, 28);
+            if (now > eventDay) {
+                eventDay.setFullYear(now.getFullYear() + 1);
+            }
+
+            const timeRemaining = eventDay - now;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60) / 1000));
+
+            document.getElementById("countdown-2-days").textContent = String(days).padStart(2, '0');
+            document.getElementById("countdown-2-hours").textContent = String(hours).padStart(2, '0');
+            document.getElementById("countdown-2-minutes").textContent = String(minutes).padStart(2, '0');
+            document.getElementById("countdown-2-seconds").textContent = String(seconds).padStart(2, '0');
+
+            const countdownTimer = document.getElementById("countdown-timer");
+
+           
+        }
+
+        // Initial call to set up the timer
+        updateCountdown2();
+        setInterval(updateCountdown2, 1000);
+
+    })();
+
+    </script>
+</body>
+</html>
