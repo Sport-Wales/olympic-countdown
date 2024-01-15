@@ -17,7 +17,6 @@
         justify-content: center; 
         height: 100vh;
         background: rgba(255, 255, 255, 0.7);
-      
         }
 
         .rainbow-container {
@@ -38,8 +37,7 @@
             top: -75%;
             left: -75%;
             background-image: conic-gradient(#0081C8, #0081C8, #FCB131, #FCB131, #EE334E, #EE334E, #00A651, #00A651);
-            animation: spin 3.5s infinite linear;
-            
+            animation: spin 3.5s infinite linear; 
         }
 
         @keyframes spin {100%{transform: rotate(-360deg);} }  
@@ -89,13 +87,11 @@
         .countdown-container {
             left: 23%;
             transform: translate(-50%, -30%);
-          
         }
 
         .countdown-container2 {
             left: 76%;
             transform: translate(-50%, -30%);
-       
         }
         
         h1 {
@@ -121,9 +117,10 @@
     </div>
     <div class="container">
         <!-- <img src="https://pbs.twimg.com/media/E9gqnaWXsAIHm7K?format=jpg&name=large" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
-        <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background2.png?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
+        <img src="./img/background2.png" class="background-image" alt="Paris 2024 Olympic Image Logo">
     
     <div class="countdown-container">
+        <h1>Cyfri i lawr tan y Gemau Olympaidd </h1>
         <h1>Countdown till the Olympic Games </h1>
         
         <div id="countdown-timer">
@@ -138,6 +135,7 @@
     </div>
 
     <div class="countdown-container2">
+        <h1>Cyfri i lawr tan y Gemau Paralympaidd </h1>
         <h1>Countdown till the Paralympic Games </h1>
         
         <div id="countdown-timer">
@@ -165,10 +163,13 @@
                 border.style.display = "block"
                 
             }, 800);
+
+            // Olympic
+
             // Function to update the countdown timer
             function updateCountdown() {
             const now = new Date();
-            const eventDay = new Date(now.getFullYear(), 7, 2);
+            const eventDay = new Date(now.getFullYear(), 6, 26);
             if (now > eventDay) {
                 eventDay.setFullYear(now.getFullYear() + 1);
             }
@@ -194,6 +195,7 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
+        // Paralympic 
 
         // Function to update the countdown timer
         function updateCountdown2() {
