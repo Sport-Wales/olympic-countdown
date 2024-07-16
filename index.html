@@ -94,15 +94,13 @@
         .countdown-container {
             top: 23%;
             left: 32%;
-            /* left: 23%;
-            transform: translate(-50%, -30%); */
+          
         }
 
         .countdown-container2 {
             top: 23%;
             left: 52%
-            /* left: 76%;
-            transform: translate(-50%, -30%); */
+           
         }
 
         .countdown-container2 .countdown-timer{
@@ -111,16 +109,17 @@
         }
 
         h1 {
-            font-size: 1.5rem;
+            font-size: 0.9vw;
             z-index: 1;
             color: #000000e0;
+            margin: 0.5em 0; 
         }
 
         .countdown-timer {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 10%;
+            margin-top: 7%;
             font-size: 3rem;
             font-weight: 600;
             color: #000000e0;
@@ -138,7 +137,7 @@
         }
 
         .label {
-            font-size: 1.5rem;
+            font-size: 1vw;
             font-weight: normal;
             margin-top: -10px;
             top: 18px;
@@ -146,7 +145,7 @@
         }
 
         .separator {
-            margin: 0 10px;
+            margin: 0 0.5vw;
             top: -10px;
             position: relative;
         }
@@ -156,11 +155,14 @@
             .countdown-container2 {
                 width: 45%;
             }
+            h1 {
+                font-size: 1.8vw;
+            }
             .countdown-timer {
-                font-size: 3rem;
+                font-size: 3.5vw;
             }
             .label {
-                font-size: 1.2rem;
+                font-size: 1.8vw;
             }
         }
 
@@ -170,15 +172,19 @@
             .countdown-container2 {
                 width: 48%;
             }
+            h1 {
+                font-size: 1.3vw;
+            }
 
             .countdown-timer {
-                font-size: 1.7rem;
+                font-size: 4vw;
             }
             .label {
-                font-size: 1rem;
+                font-size: 0.1vw;
+
             }
             .separator {
-                margin: 0 5px;
+                margin: 0 0.2vw;
             }
         }
     </style>
@@ -201,22 +207,22 @@
             <div id="countdown-timer" class="countdown-timer">
                 <div class="countdown-item">
                     <span id="days">00</span>
-                    <span class="label">days</span>
+                    <span class="label">Days</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="countdown-item">
                     <span id="hours">00</span>
-                    <span class="label">hours</span>
+                    <span class="label">Hours</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="countdown-item">
                     <span id="minutes">00</span>
-                    <span class="label">minutes</span>
+                    <span class="label">Minutes</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="countdown-item">
                     <span id="seconds">00</span>
-                    <span class="label">seconds</span>
+                    <span class="label">Seconds</span>
                 </div>
             </div>
         </div>
@@ -228,22 +234,22 @@
             <div id="countdown-timer-2" class="countdown-timer">
                 <div class="countdown-item">
                     <span id="countdown-2-days">00</span>
-                    <span class="label">days</span>
+                    <span class="label">Days</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="countdown-item">
                     <span id="countdown-2-hours">00</span>
-                    <span class="label">hours</span>
+                    <span class="label">Hours</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="countdown-item">
                     <span id="countdown-2-minutes">00</span>
-                    <span class="label">minutes</span>
+                    <span class="label">Minutes</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="countdown-item">
                     <span id="countdown-2-seconds">00</span>
-                    <span class="label">seconds</span>
+                    <span class="label">Seconds</span>
                 </div>
             </div>
         </div>
