@@ -43,8 +43,13 @@
         @keyframes spin {100%{transform: rotate(-360deg);} }  
 
         .container {
-            width: 99vw;
-            height: 98vh;
+            /* width: 99vw;
+            height: 98vh; */
+
+            position: relative; 
+            width: 100%; 
+            height: 100vh; 
+            overflow: hidden;
 
         }
 
@@ -52,6 +57,7 @@
             display: flex;
             width: 99vw;
             height: 98vh;
+            object-fit: cover;
             position: absolute;
             opacity: 0.99;
             top: 50%;
@@ -71,9 +77,9 @@
             left: 0;
         }
 
+        
         .countdown-container,
         .countdown-container2 {
-            
             position: absolute;
             text-align: center;
             margin: 0 auto;
@@ -82,31 +88,98 @@
             border-radius: 20px;
             padding: 25px 10px;
             padding-top: 60px;
-            /* background-color: rgba(240, 221, 181, 0.644); */
-    
+            transform: translate(-50%, -50%);
         }
 
         .countdown-container {
-            left: 23%;
-            transform: translate(-50%, -30%);
+            top: 23%;
+            left: 32%;
+            /* left: 23%;
+            transform: translate(-50%, -30%); */
         }
 
         .countdown-container2 {
-            left: 76%;
-            transform: translate(-50%, -30%);
+            top: 23%;
+            left: 52%
+            /* left: 76%;
+            transform: translate(-50%, -30%); */
         }
-        
+
+        .countdown-container2 .countdown-timer{
+            position: relative;
+            left: 2%
+        }
+
         h1 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             z-index: 1;
             color: #000000e0;
         }
 
-        #countdown-timer {
-            font-size: 7rem;
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+            font-size: 3rem;
             font-weight: 600;
             color: #000000e0;
-            transition: font-size 2.5s ease-in-out;
+            transition: font-size 0.5s ease-in-out;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-item span:first-child {
+            line-height: 1;
+        }
+
+        .label {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-top: -10px;
+            top: 18px;
+            position: relative;
+        }
+
+        .separator {
+            margin: 0 10px;
+            top: -10px;
+            position: relative;
+        }
+
+        @media (max-width: 1200px) {
+            .countdown-container,
+            .countdown-container2 {
+                width: 45%;
+            }
+            .countdown-timer {
+                font-size: 3rem;
+            }
+            .label {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .countdown-container,
+            .countdown-container2 {
+                width: 48%;
+            }
+
+            .countdown-timer {
+                font-size: 1.7rem;
+            }
+            .label {
+                font-size: 1rem;
+            }
+            .separator {
+                margin: 0 5px;
+            }
         }
     </style>
     
@@ -118,40 +191,62 @@
         <div class="rainbow" id="rainbow-border"></div>
     </div>
     <div class="container">
-        <!-- <img src="https://pbs.twimg.com/media/E9gqnaWXsAIHm7K?format=jpg&name=large" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
-        <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background2.png?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
-    
-    <div class="countdown-container">
-        <h1>Cyfri i lawr tan y Gemau Olympaidd </h1>
-        <h1>Countdown till the Olympic Games </h1>
-        
-        <div id="countdown-timer" >
-            <span id="days">00</span>
-            <span>:</span>
-            <span id="hours">00</span>
-            <span>:</span>
-            <span id="minutes">00</span>
-            <span>:</span>
-            <span id="seconds">00</span>
-        </div>
-    </div>
+        <!-- <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background2.png?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
+        <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background3.svg?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
 
-    <div class="countdown-container2"  >
-        <h1>Cyfri i lawr tan y Gemau Paralympaidd </h1>
-        <h1>Countdown till the Paralympic Games </h1>
-        
-        <div id="countdown-timer">
-            <span id="countdown-2-days">00</span>
-            <span>:</span>
-            <span id="countdown-2-hours">00</span>
-            <span>:</span>
-            <span id="countdown-2-minutes">00</span>
-            <span>:</span>
-            <span id="countdown-2-seconds">00</span>
-        </div>
-    </div>
-    </div>
+        <div class="countdown-container">
+            <h1>Cyfri i lawr tan y Gemau Olympaidd</h1>
+            <h1>Countdown till the Olympic Games</h1>
             
+            <div id="countdown-timer" class="countdown-timer">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <span class="label">days</span>
+                </div>
+                <span class="separator">:</span>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <span class="label">hours</span>
+                </div>
+                <span class="separator">:</span>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <span class="label">minutes</span>
+                </div>
+                <span class="separator">:</span>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <span class="label">seconds</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="countdown-container2">
+            <h1>Cyfri i lawr tan y Gemau Paralympaidd</h1>
+            <h1>Countdown till the Paralympic Games</h1>
+            
+            <div id="countdown-timer-2" class="countdown-timer">
+                <div class="countdown-item">
+                    <span id="countdown-2-days">00</span>
+                    <span class="label">days</span>
+                </div>
+                <span class="separator">:</span>
+                <div class="countdown-item">
+                    <span id="countdown-2-hours">00</span>
+                    <span class="label">hours</span>
+                </div>
+                <span class="separator">:</span>
+                <div class="countdown-item">
+                    <span id="countdown-2-minutes">00</span>
+                    <span class="label">minutes</span>
+                </div>
+                <span class="separator">:</span>
+                <div class="countdown-item">
+                    <span id="countdown-2-seconds">00</span>
+                    <span class="label">seconds</span>
+                </div>
+            </div>
+        </div>
     </div>
         
         
