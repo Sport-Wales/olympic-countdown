@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>The Olympic/Paralympic Games Countdown</title>
-
+ 
     <style>
-
+ 
         *{
             box-sizing: border-box;
             font-family: sans-serif;
         }
-
+ 
         body {
         margin: 0;
         padding: 0px;
-        justify-content: center; 
+        justify-content: center;
         height: 100vh;
         background: rgba(255, 255, 255, 0.7);
         }
-
+ 
         .rainbow-container {
             overflow: hidden;
             position: absolute;
@@ -26,8 +26,8 @@
             width: 100vw;
             height: 100vh;
         }
-        
-
+       
+ 
         .rainbow {
             z-index: -10;
             width: 250%;
@@ -37,22 +37,22 @@
             top: -75%;
             left: -75%;
             background-image: conic-gradient(#0081C8, #0081C8, #FCB131, #FCB131, #EE334E, #EE334E, #00A651, #00A651);
-            animation: spin 3.5s infinite linear; 
+            animation: spin 3.5s infinite linear;
         }
-
+ 
         @keyframes spin {100%{transform: rotate(-360deg);} }  
-
+ 
         .container {
             /* width: 99vw;
             height: 98vh; */
-
-            position: relative; 
-            width: 100%; 
-            height: 100vh; 
+ 
+            position: relative;
+            width: 100%;
+            height: 100vh;
             overflow: hidden;
-
+ 
         }
-
+ 
         .background-image {
             display: flex;
             width: 99vw;
@@ -65,7 +65,7 @@
             transform: translate(-50%, -50%);
             z-index: -1;
         }
-
+ 
         .background-image-athletes {
             overflow: hidden;
             display: flex;
@@ -76,8 +76,8 @@
             top: 0;
             left: 0;
         }
-
-        
+ 
+       
         .countdown-container,
         .countdown-container2 {
             position: absolute;
@@ -90,33 +90,33 @@
             padding-top: 60px;
             transform: translate(-50%, -50%);
         }
-
+ 
         .countdown-container {
             top: 53%;
             left: 33.5%;
-          
+         
         }
-
+ 
         .countdown-container2 {
             top: 53%;
             left: 55%
            
         }
-
+ 
         .countdown-container2 .countdown-timer{
             position: relative;
             left: 2%
         }
          
        
-
+ 
         h1 {
             font-size: 0.9vw;
             z-index: 1;
             color: #000000e0;
-            margin: 0.5em 0; 
+            margin: 0.5em 0;
         }
-
+ 
         .countdown-timer {
             display: flex;
             justify-content: center;
@@ -127,17 +127,17 @@
             color: #000000e0;
             transition: font-size 0.5s ease-in-out;
         }
-
+ 
         .countdown-item {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
+ 
         .countdown-item span:first-child {
             line-height: 1;
         }
-
+ 
         .label {
             font-size: 1vw;
             font-weight: normal;
@@ -145,32 +145,14 @@
             top: 18px;
             position: relative;
         }
-
+ 
         .separator {
             margin: 0 0.5vw;
             top: -10px;
             position: relative;
         }
-
+ 
         .live-now {
-            display: inline-block;
-            font-size: 2.8rem;
-            font-weight: 600;
-            justify-content: center;
-            align-items: center;
-            margin-top: 11.3%;
-            
-        }
-
-        .live-now span {
-            position: relative;
-            display: inline-block;
-            text-transform: uppercase;
-            animation: wave 1.8s infinite;
-            animation-delay: calc(0.1s*var(--i));     
-        }
-
-        .live-now2 {
             display: inline-block;
             font-size: 2.8rem;
             font-weight: 600;
@@ -179,18 +161,36 @@
             margin-top: 10%;
             
         }
-
+ 
+        .live-now span {
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+            animation: wave 1.8s infinite;
+            animation-delay: calc(0.1s*var(--i));    
+        }
+ 
+        .live-now2 {
+            display: inline-block;
+            font-size: 2.8rem;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+           
+        }
+ 
         .live-now2 span {
             position: relative;
             display: inline-block;
             text-transform: uppercase;
             animation: wave 1.8s infinite;
-            animation-delay: calc(0.1s*var(--i));     
+            animation-delay: calc(0.1s*var(--i));    
         }
         .space {
             margin-left: 10px;
         }
-
+ 
         @keyframes  wave{
             0%, 40%, 100% {
                 transform: translateY(0);
@@ -198,11 +198,11 @@
             20% {
                 transform: translateY(-8px);
             }
-
+ 
         }
-
-        
-
+ 
+       
+ 
         @media (max-width: 1200px) {
             .countdown-container,
             .countdown-container2 {
@@ -218,9 +218,9 @@
                 font-size: 1.8vw;
             }
         }
-
+ 
         @media (max-width: 768px) {
-
+ 
             .countdown-container,
             .countdown-container2 {
                 width: 48%;
@@ -228,22 +228,22 @@
             h1 {
                 font-size: 1.3vw;
             }
-
+ 
             .countdown-timer {
                 font-size: 4vw;
             }
             .label {
                 font-size: 0.1vw;
-
+ 
             }
             .separator {
                 margin: 0 0.2vw;
             }
         }
     </style>
-    
-    
-
+   
+   
+ 
 </head>
 <body>
     <div class="rainbow-container">
@@ -252,12 +252,12 @@
     <div class="container">
         <!-- <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background2.png?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
         <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background5.svg?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
-
+ 
         <div class="countdown-container">
             <h1>Cyfri i lawr tan y Gemau Olympaidd</h1>
             <h1>Countdown till the Olympic Games</h1>
-
-            <div id="live-now" class="live-now"> 
+ 
+            <div id="live-now" class="live-now">
             <span style="--i:1">L</span>
             <span style="--i:2">I</span>
             <span style="--i:3">V</span>
@@ -268,7 +268,7 @@
             <span style="--i:8">W</span>
             </div>
             
-            <div id="countdown-timer" class="countdown-timer" style="display: none;">
+            <div id="countdown-timer" class="countdown-timer">
                 <div class="countdown-item">
                     <span id="days">00</span>
                     <span class="label">Days</span>
@@ -290,12 +290,12 @@
                 </div>
             </div>
         </div>
-    
+   
         <div class="countdown-container2">
             <h1>Cyfri i lawr tan y Gemau Paralympaidd</h1>
             <h1>Countdown till the Paralympic Games</h1>
 
-            <!-- <div id="live-now2" class="live-now2"> 
+            <div id="live-now2" class="live-now2"> 
                 <span style="--i:1">L</span>
                 <span style="--i:2">I</span>
                 <span style="--i:3">V</span>
@@ -304,7 +304,7 @@
                 <span style="--i:6">N</span>
                 <span style="--i:7">O</span>
                 <span style="--i:8">W</span>
-            </div> -->
+            </div>
             
             <div id="countdown-timer-2" class="countdown-timer">
                 <div class="countdown-item">
@@ -329,21 +329,21 @@
             </div>
         </div>
     </div>
-        
-        
+       
+       
     <!-- <script src="script.js"></script> -->
-
+ 
     <script >
         (()=>{
-
+ 
             const border = document.getElementById("rainbow-border")
             setTimeout(() => {
                 border.style.display = "block"
-                
+               
             }, 800);
-
+ 
             // Olympic
-
+ 
              // Function to update the countdown timer
             function updateCountdown() {
             const now = new Date();
@@ -351,9 +351,9 @@
             if (now > eventDay) {
                 eventDay.setFullYear(now.getFullYear() + 1);
             }
-
+ 
             const timeRemaining = eventDay - now;
-
+ 
             if (timeRemaining <= 0) {
                     // Time's up, hide countdown and show live-now
                     document.querySelector('.countdown-container .countdown-timer').style.display = 'none';
@@ -364,7 +364,7 @@
                     const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeRemaining % (1000 * 60) / 1000));
-
+ 
                     document.getElementById("days").textContent = String(days).padStart(2, '0');
                     document.getElementById("hours").textContent = String(hours).padStart(2, '0');
                     document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
@@ -372,14 +372,14 @@
                 }
             }
             // For testing: Set the event time to 5 minutes from when the page loads
-  
-
+ 
+ 
         // Initial call to set up the timer
         updateCountdown();
         setInterval(updateCountdown, 1000);
-
+ 
         // Initially hide the live-now div
-        document.querySelector('.live-now').style.display = 'block';
+        document.querySelector('.live-now').style.display = 'none';
 
         // Paralympic 
 
@@ -390,9 +390,9 @@
             if (now > eventDay) {
                 eventDay.setFullYear(now.getFullYear() + 1);
             }
-
+ 
             const timeRemaining = eventDay - now;
-
+ 
             if (timeRemaining <= 0) {
                     // Time's up, hide countdown and show live-now
                     document.querySelector('.countdown-container2 .countdown-timer').style.display = 'none';
@@ -403,24 +403,25 @@
                     const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeRemaining % (1000 * 60) / 1000));
-
+ 
                     document.getElementById("countdown-2-days").textContent = String(days).padStart(2, '0');
                     document.getElementById("countdown-2-hours").textContent = String(hours).padStart(2, '0');
                     document.getElementById("countdown-2-minutes").textContent = String(minutes).padStart(2, '0');
                     document.getElementById("countdown-2-seconds").textContent = String(seconds).padStart(2, '0');
                 }
-
+ 
            
         }
-
+ 
         // Initial call to set up the timer
         updateCountdown2();
         setInterval(updateCountdown2, 1000);
         // Initially hide the live-now div
         document.querySelector('.live-now2').style.display = 'none';
-            
+           
     })();
-
+ 
     </script>
 </body>
 </html>
+ 
