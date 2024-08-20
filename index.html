@@ -107,6 +107,8 @@
             position: relative;
             left: 2%
         }
+
+       
          
        
  
@@ -126,6 +128,10 @@
             font-weight: 600;
             color: #000000e0;
             transition: font-size 0.5s ease-in-out;
+        }
+
+        .countdown-timer-one {
+            color: #ffffff00;
         }
  
         .countdown-item {
@@ -243,7 +249,7 @@
     </style>
    
    
- 
+   <!-- C:\Users\anselm.powell\Documents\Sport_Wales\SW_Github\olympic-countdown-v1\background6.svg -->
 </head>
 <body>
     <div class="rainbow-container">
@@ -251,8 +257,8 @@
     </div>
     <div class="container">
         <!-- <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background2.png?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
-        <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background5.svg?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
- 
+        <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background6.svg?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
+        <!-- <img src=".\background6.svg" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
         <div class="countdown-container">
             <h1>Cyfri i lawr tan y Gemau Olympaidd</h1>
             <h1>Countdown till the Olympic Games</h1>
@@ -268,7 +274,7 @@
             <span style="--i:8">W</span>
             </div>
             
-            <div id="countdown-timer" class="countdown-timer">
+            <div id="countdown-timer" class="countdown-timer countdown-timer-one">
                 <div class="countdown-item">
                     <span id="days">00</span>
                     <span class="label">Days</span>
@@ -306,7 +312,7 @@
                 <span style="--i:8">W</span>
             </div>
             
-            <div id="countdown-timer-2" class="countdown-timer">
+            <div id="countdown-timer-2" class="countdown-timer countdown-timer-two">
                 <div class="countdown-item">
                     <span id="countdown-2-days">00</span>
                     <span class="label">Days</span>
@@ -412,6 +418,46 @@
  
            
         }
+        function fireConfetti() {
+        // Randomize the order of firing
+        const first = Math.random() < 0.5 ? 1 : 2;
+
+        if (first === 1) {
+            confetti({
+                particleCount: 25,
+                angle: 100,
+                spread: 50,
+                origin: { x: 0.26, y: 0.7 },
+            });
+
+            setTimeout(() => {
+                confetti({
+                    particleCount: 25,
+                    angle: 80,
+                    spread: 50,
+                    origin: { x: 0.40, y: 0.7 },
+                });
+            }, 500);
+            } else {
+                confetti({
+                    particleCount: 25,
+                    angle: 80,
+                    spread: 50,
+                    origin: { x: 0.40, y: 0.7 },
+                });
+
+                setTimeout(() => {
+                    confetti({
+                        particleCount: 25,
+                        angle: 100,
+                        spread: 50,
+                        origin: { x: 0.26, y: 0.7 },
+                    });
+                }, 500);
+            }
+        }
+
+    setInterval(fireConfetti, 3000);
  
         // Initial call to set up the timer
         updateCountdown2();
@@ -422,6 +468,7 @@
     })();
  
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
 </html>
  
