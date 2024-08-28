@@ -107,6 +107,8 @@
             position: relative;
             left: 2%
         }
+
+       
          
        
  
@@ -126,6 +128,10 @@
             font-weight: 600;
             color: #000000e0;
             transition: font-size 0.5s ease-in-out;
+        }
+
+        .countdown-timer-one {
+            color: #ffffff00;
         }
  
         .countdown-item {
@@ -158,8 +164,8 @@
             font-weight: 600;
             justify-content: center;
             align-items: center;
-            margin-top: 11.3%;
-           
+            margin-top: 10%;
+            
         }
  
         .live-now span {
@@ -243,7 +249,7 @@
     </style>
    
    
- 
+   <!-- C:\Users\anselm.powell\Documents\Sport_Wales\SW_Github\olympic-countdown-v1\background6.svg -->
 </head>
 <body>
     <div class="rainbow-container">
@@ -251,8 +257,8 @@
     </div>
     <div class="container">
         <!-- <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background2.png?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
-        <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background5.svg?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
- 
+        <img src="https://github.com/Sport-Wales/olympic-countdown/blob/main/background6.svg?raw=true" class="background-image" alt="Paris 2024 Olympic Image Logo">
+        <!-- <img src=".\background6.svg" class="background-image" alt="Paris 2024 Olympic Image Logo"> -->
         <div class="countdown-container">
             <h1>Cyfri i lawr tan y Gemau Olympaidd</h1>
             <h1>Countdown till the Olympic Games</h1>
@@ -267,8 +273,8 @@
             <span style="--i:7">O</span>
             <span style="--i:8">W</span>
             </div>
-           
-            <div id="countdown-timer" class="countdown-timer" style="display: none;">
+            
+            <div id="countdown-timer" class="countdown-timer countdown-timer-one">
                 <div class="countdown-item">
                     <span id="days">00</span>
                     <span class="label">Days</span>
@@ -294,8 +300,8 @@
         <div class="countdown-container2">
             <h1>Cyfri i lawr tan y Gemau Paralympaidd</h1>
             <h1>Countdown till the Paralympic Games</h1>
- 
-            <!-- <div id="live-now2" class="live-now2">
+
+            <div id="live-now2" class="live-now2"> 
                 <span style="--i:1">L</span>
                 <span style="--i:2">I</span>
                 <span style="--i:3">V</span>
@@ -304,9 +310,9 @@
                 <span style="--i:6">N</span>
                 <span style="--i:7">O</span>
                 <span style="--i:8">W</span>
-            </div> -->
-           
-            <div id="countdown-timer-2" class="countdown-timer">
+            </div>
+            
+            <!-- <div id="countdown-timer-2" class="countdown-timer countdown-timer-two">
                 <div class="countdown-item">
                     <span id="countdown-2-days">00</span>
                     <span class="label">Days</span>
@@ -326,7 +332,7 @@
                     <span id="countdown-2-seconds">00</span>
                     <span class="label">Seconds</span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
        
@@ -379,10 +385,10 @@
         setInterval(updateCountdown, 1000);
  
         // Initially hide the live-now div
-        document.querySelector('.live-now').style.display = 'block';
- 
-        // Paralympic
- 
+        document.querySelector('.live-now').style.display = 'none';
+
+        // Paralympic 
+
         // Function to update the countdown timer
         function updateCountdown2() {
             const now = new Date();
@@ -412,16 +418,51 @@
  
            
         }
+        
+        function fireConfetti() {
+    // Randomize the order of firing
+    const order = [1, 2, 3].sort(() => Math.random() - 0.5);
+
+    order.forEach((shooter, index) => {
+        setTimeout(() => {
+            if (shooter === 1) {
+                confetti({
+                    particleCount: 25,
+                    angle: 100,
+                    spread: 50,
+                    origin: { x: 0.26, y: 0.65 },
+                });
+            } else if (shooter === 2) {
+                confetti({
+                    particleCount: 25,
+                    angle: 80,
+                    spread: 50,
+                    origin: { x: 0.40, y: 0.65 },
+                });
+            } else if (shooter === 3) {
+                confetti({
+                    particleCount: 20,
+                    angle: 90,
+                    spread: 50,
+                    origin: { x: 0.32, y: 0.58 },
+                });
+            }
+        }, index * 500); // Delay each shooter by 500ms from the previous one
+    });
+}
+
+setInterval(fireConfetti, 6000);
  
         // Initial call to set up the timer
         updateCountdown2();
         setInterval(updateCountdown2, 1000);
         // Initially hide the live-now div
-        document.querySelector('.live-now2').style.display = 'none';
+        document.querySelector('.live-now2').style.display = 'display';
            
     })();
  
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
 </html>
  
